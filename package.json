@@ -1,0 +1,26 @@
+{
+  "name": "terraforge",
+  "productName": "TerraForge",
+  "version": "0.3.0",
+  "description": "TerraForge",
+  "author": "TerraForge",
+  "main": "main.js",
+  "scripts": {
+    "start": "node prepare.js && electron .",
+    "predist": "node prepare.js",
+    "dist": "electron-builder --win dir --publish never"
+  },
+  "devDependencies": {
+    "@fontsource/press-start-2p": "^5.0.0",
+    "three": "0.128.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.terraforge.game",
+    "productName": "TerraForge",
+    "files": ["main.js"],
+    "extraFiles": [{ "from": "game", "to": "game" }],
+    "win": { "target": "dir" }
+  }
+}
